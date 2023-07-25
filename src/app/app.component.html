@@ -2,12 +2,11 @@
   <div>
     <h1>Team Generator</h1>
     <ul class="list">
-      <li>moaaz</li>
-      <li>mohammed</li>
+      <li *ngFor="let member of members">{{member}}</li>
     </ul>
   </div>
   <div class="add-members-container">
-    <input type="text" placeholder="Name">
+    <input #addMemberInput type="text"  placeholder="Name" (input)="onInput(addMemberInput.value)">
     <button (click)="addMember()">Add</button>
 
   </div>
