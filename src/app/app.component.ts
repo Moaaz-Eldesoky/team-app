@@ -7,15 +7,31 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'team-app';
+
   newMemberName = '';
   members: string[] = [];
+
+  errorMessage: string = ""
+  teams = "";
   onInput(member: string) {
-    this.newMemberName=member;
+    this.newMemberName = member;
     console.log(this.members);
   }
   addMember() {
-    this.members.push(this.newMemberName);
+    if (!this.newMemberName) {
+      this.errorMessage= "name can't be empty";
+    }
+    else {
+      this.members.push(this.newMemberName);
+      this.newMemberName = "";
+    }
+  }
 
+  getTeams(numT: string) {
+    this.teams = numT;
+  }
+  displayTeams() {
+    console.log("pressed");
   }
 
 }

@@ -6,12 +6,18 @@
     </ul>
   </div>
   <div class="add-members-container">
-    <input #addMemberInput type="text"  placeholder="Name" (input)="onInput(addMemberInput.value)">
+    <input #addMemberInput type="text" placeholder="Name" (input)="onInput(addMemberInput.value)"
+      [value]="newMemberName">
     <button (click)="addMember()">Add</button>
 
   </div>
   <div class="input-container">
-    <input type="text" placeholder="# of teams">
-    <button>Generate</button>
+    <input #numOfTeams type="text" placeholder="# of teams" (input)="getTeams(numOfTeams.value)">
+    <button (click)="displayTeams()">Generate</button>
+
+  </div>
+  <div>
+    <h1>{{teams}}</h1>
+    <p *ngIf="errorMessage" style="color: red;">{{errorMessage}}</p>
   </div>
 </div>
