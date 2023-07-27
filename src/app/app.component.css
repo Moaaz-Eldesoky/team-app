@@ -66,3 +66,7 @@ li{
   font-size: 1.3rem;
   margin-bottom: 0.5ren;
 }
+.team{
+  border: 1px solid #DDD;
+  margin-bottom: 20px;
+}

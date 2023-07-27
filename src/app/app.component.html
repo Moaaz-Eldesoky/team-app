@@ -18,9 +18,9 @@
     <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
   </div>
   <div *ngFor="let team of newArray; let i= index " class="team">
-    <h1>Team {{i+1}} </h1>
+    <h2>Team {{i+1}} </h2>
     <div class="block">
-      {{team}}
+      <h3>{{team}}</h3>
     </div>
   </div>
 </div>
