@@ -9,15 +9,18 @@
     <input #addMemberInput type="text" placeholder="Name" (input)="onInput(addMemberInput.value)"
       [value]="newMemberName">
     <button (click)="addMember()">Add</button>
-
   </div>
   <div class="input-container">
-    <input #numOfTeams type="text" placeholder="# of teams" (input)="getTeams(numOfTeams.value)">
-    <button (click)="displayTeams()">Generate</button>
-
+    <input #numOfTeams type="number" placeholder="# of teams" (input)="getTeams(numOfTeams.value)">
+    <button (click)="generateTeams()">Generate</button>
   </div>
   <div>
-    <h1>{{teams}}</h1>
-    <p *ngIf="errorMessage" style="color: red;">{{errorMessage}}</p>
+    <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
+  </div>
+  <div *ngFor="let team of newArray; let i= index " class="team">
+    <h1>Team {{i+1}} </h1>
+    <div class="block">
+      {{team}}
+    </div>
   </div>
 </div>
